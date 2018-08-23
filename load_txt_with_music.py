@@ -9743,6 +9743,7 @@ if __name__ == '__main__':
         try:
             with NamedTemporaryFile() as f:
                 f.write(b64decode(mp3_base64))
+                f.flush()
                 music_proc = Popen(["/usr/bin/afplay", f.name])
 
                 # プロセス実行猶予が欲しいため
